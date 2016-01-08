@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<externalprograms>
+    
+    <program step="scgminingcreatedb">
+        <executable>makeblastdb</executable>
+        <option name="dbtype">prot</option>
+    </program>
+    
+    <program step="scgminingsearch">
+        <executable>blastx</executable>
+        <option name="db" comment="">BUSCO</option>
+        <option name="outfmt" comment="XML output format">5</option>
+        <option name="out" comment="XML formatted sequences of nucleotide sequences matching SCG protein sequence">scgseq.xml</option>
+        <option name="max_target_seqs" comment="search only for single best hit">1</option>
+        <option name="num_threads" comment="Use 3 processors for blast search">3</option>
+        <option name="max_hsps" comment="output only single sequence">1</option>
+	<filetype name="db">phr</filetype>
+	<filetype name="db">pin</filetype>
+	<filetype name="db">psq</filetype>
+    </program>
+    
+    <program step="generatehashfile">
+        <executable>bowtie2-build</executable>
+    </program>
+    
+    <program step="mapping">
+        <executable>bowtie2</executable>
+        <option name="p">3</option>
+        <option name="f"></option>
+        <flag name="local"/>
+    </program>
+    
+</externalprograms>
