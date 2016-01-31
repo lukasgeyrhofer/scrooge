@@ -77,7 +77,7 @@ def main():
     if os.path.isdir(args.tmpdir):
 	print >> sys.stderr,"WARNING: temporary directory '%s' exists. Files will be overwritten!"%args.tmpdir
     else:
-	os.mkdir("tmp")
+	os.mkdir(args.tmpdir)
 
 
 

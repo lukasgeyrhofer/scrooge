@@ -3,7 +3,7 @@
     
     <program step="scgminingcreatedb">
         <executable>makeblastdb</executable>
-        <option name="dbtype">prot</option>
+        <option name="dbtype">nucl</option>
     </program>
     
     <program step="scgminingsearch">
